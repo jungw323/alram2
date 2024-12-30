@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹뷰 팝업 테스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #popup-bg {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        #popup button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>웹뷰 팝업 테스트</h1>
+    <button onclick="showPopup()">팝업 띄우기</button>
+
+    <!-- 팝업 영역 -->
+    <div id="popup-bg" onclick="hidePopup()"></div>
+    <div id="popup">
+        <p>이것은 팝업입니다!</p>
+        <button onclick="hidePopup()">닫기</button>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popup-bg').style.display = 'block';
+        }
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-bg').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
